@@ -8,9 +8,6 @@ casing iteration, developed in the second half of 2014.
 
 *   Give all dimensions in both metric and imperial units.
 *   Describe how to wire the detector.
-*   Figure out a solution to the app_key, app_secret dilemma.  (Have everyone
-    register their own app?)
-*   Describe setting up Twitter integration.
 
 
 # Parts list #
@@ -50,6 +47,8 @@ casing iteration, developed in the second half of 2014.
     cable.  Sets consisting of an appropriate connector (FC40-P or FC26-P,
     respectively) plus the cable itself are sold by [Adafruit](http://www.adafruit.com/products/862). 
     Alternately, you can get the two parts separately [on](http://www.amazon.com/gp/product/B00977GOCU) [Amazon](http://www.amazon.com/gp/product/B00LUT4LOG).
+
+*   [Heat shrink](http://www.adafruit.com/products/344).
 
 
 ## Lumber ##
@@ -280,7 +279,11 @@ The process is almost identical to the one for Dropbox.
 
 ## Wiring the detector ##
 
-Consult the circuit schematic, which 
+Consult the circuit schematic, currently available [here](https://www.dropbox.com/s/40zgsz4fzd9ciat/schematic.pdf?dl=0).  Although the schematic does not make
+it clear, the Raspberry Pi has multiple grounds, and you can use this to your
+advantage.  I connected the TSOP and LED loops to two different ones (the
+TSOP to board pin 14, the LED to board pin 6).  This allowed me to use only
+one ribbon cable to connect all of the components.
 
 
 
