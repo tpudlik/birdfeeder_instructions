@@ -220,21 +220,29 @@ casing iteration, developed in the second half of 2014.
 
 If you want your pictures automatically uploaded, rather than merely stored
 locally on the device, you will want to set up Dropbox or Twitter integration.
+(Or both!)
+
 
 ### Dropbox ###
 
-1.  Go to the `Birdfeeder` folder (where our code is located) and edit the
-    `dropbox_authentication.py` file:
+You will need to register an application with Dropbox and save its
+credentials.
+
+1.  Go to [https://www.dropbox.com/developers/apps] and click on the
+    `Create app` button.
+2.  When asked "What type of app do you want to create?", choose "Dropbox API
+    App".  For storage, choose "Files and datastores".  The app can be limited
+    to its own folder.  Finally, provide a name for the app.
+3.  You will be taken to your new app's dashboard.  It lists two secret keys,
+    `App key` and `App secret`.  You will need them for the next step.
+4.  On the Pi, navigate to the `Birdfeeder` folder (where our code is located)
+    and edit the `dropbox_authentication.py` file:
 
         nano dropbox_authentication.py
 
-    Change the value of `app_key` and `app_secret` to,
-
-        app_key = 'fqvaq6adohoxrgg'
-        app_secret = 'bpt1q89jkhvdipj'
-
-    Exit nano using `Ctrl-X`.
-2.  Run,
+    Change the value of `app_key` and `app_secret` to the values you got from
+    the dashboard.  Exit nano using `Ctrl-X`.
+5.  Run,
     
         python dropbox_authentication.py
 
@@ -245,8 +253,29 @@ locally on the device, you will want to set up Dropbox or Twitter integration.
 
 ### Twitter ###
 
-Making Twitter integration as easy as the Dropbox process described above is 
-a work in progress.
+The process is almost identical to the one for Dropbox.
+
+1.  Go to [https://apps.twitter.com/], log in, click on `Create New App`, and
+    fill out the required fields.
+2.  On the application's dashboard, under "Application Settings", note the
+    value of "Access level".  If it is not "Read and Write", modify the app
+    permissions.
+3.  Also on the dashboard, select the Keys and Access Tokens tab and note the
+    values of "API key" and "API secret".  You will need these next.
+4.  On the Pi, navigate to the `Birdfeeder` folder (where our code is located)
+    and edit the `twitter_authentication.py` file:
+
+        nano twitter_authentication.py
+
+    Change the value of `app_key` and `app_secret` to the values you got from
+    the dashboard.  Exit nano using `Ctrl-X`.
+5.  Run,
+    
+        python twitter_authentication.py
+
+    and follow the prompts.  You will have to go to the Twitter website and
+    enter your username and password.  When you’re done, a file
+    `access_tokens.py` will appear in the folder (if it wasn’t there already).
 
 
 ## Wiring the detector ##
